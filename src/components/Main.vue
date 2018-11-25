@@ -114,9 +114,11 @@
         this.fetchData(true)
       },
       validateInput(evt) {
-        if (this.input.length >= 15) {
-          evt.preventDefault()
-          return
+        if (this.input != null && this.input.length >= 15) {
+          if (evt.keyCode >= 48 && evt.keyCode <= 90) {
+            evt.preventDefault()
+            return
+          }
         }
       }
     },
