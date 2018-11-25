@@ -6,7 +6,7 @@
 ```
 npm install
 npm run serve
-The project is also accessible on 
+The project is also accessible on https://bitcoin-price-rates.firebaseapp.com/
 ```
 
 ### Technologies and libraries used
@@ -17,16 +17,16 @@ Bootstrap-Vue (Only for dropdown as Bootstrap Jquery intercepts with Vue)
 FireBase (deployment)
 ```
 ### Possible improvements
-
-*The way I track which currencies are displayed is hacky and could use a rework.
+```
+The way I track which currencies are displayed is hacky and could use a rework.
 On receiving API Json data, current data into temp object (as new received data overwrites it) and by using Code, 
 I move Display flags to a new object. There must be a cleaner way to do this.
 
-*Also, I struggled to get Unicodes to work in <input> tags. 'V-model' attribute in <Input> does not support html.
+Also, I struggled to get Unicodes to work in <input> tags. 'V-model' attribute in <Input> does not support html.
 Posible solution uwould be to use Vue computed properties in v-html tag (dont know if this going to work)
 
-*Styling could also be added.
-
+Styling could also be added.
+```
 
 
 
