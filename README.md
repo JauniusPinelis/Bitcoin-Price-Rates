@@ -1,4 +1,4 @@
-# hello-world
+# Bitcoin price rates
 
 ## Project setup
 ```

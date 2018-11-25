@@ -19,3 +19,11 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+
+### Vuejs ###
+node_modules
+.DS_Store
+docs/_book
+test/
+
