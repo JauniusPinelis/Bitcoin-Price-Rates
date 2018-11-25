@@ -19,7 +19,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">BTC ₿</span>
               </div>
-              <input v-model="input" type="number" class="form-control" placeholder="Bitcoins">
+              <input v-model="input" @keydown="validateInput" type="number" class="form-control" placeholder="Bitcoins">
               <div class="input-group-append">
                 <b-dropdown variant="info" v-show="displayAddCurrenciesDropdown" text="Add a currency">
                   <b-dropdown-item v-for="currency in data" v-bind:key="currency.code" v-show="!currency.display" v-html="currency.description + ' - ' + currency.code" v-on:click="currency.display = true">
@@ -78,11 +78,10 @@
                   return obj.code == dataObject.code
                 });
                 dataObject.display = currency.display;
-              }
-              else{
+              } else {
                 dataObject.display = 1;
               }
-
+  
               self.tempData.push(dataObject);
             });
   
@@ -111,8 +110,14 @@
           text: 'Something wrong has happened'
         })
       },
-      updateData(){
+      updateData() {
         this.fetchData(true)
+      },
+      validateInput(evt) {
+        if (this.input.length >= 15) {
+          evt.preventDefault()
+          return
+        }
       }
     },
     created() {
